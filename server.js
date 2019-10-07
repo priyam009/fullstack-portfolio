@@ -21,11 +21,11 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //Handlebars
-app.engine("handlebars", exphbs({ defaultLayout: "main"}));
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 //Require Routes
-require("./routes/apiroutes.js")(api);
+require("./routes/apiroutes.js")(app);
 
 //Clearing database only if the node environment is test
 var syncOptions = { force: false };
@@ -37,6 +37,6 @@ if (process.env.NODE_ENV === "test") {
 //Starting server and syncing models
 db.sequelize.sync(syncOptions).then(function() {
   app.listen(PORT, function() {
-    console.log("Listening on port http://localhost:", PORT);
+    console.log("Listening on port http://localhost:" + PORT);
   });
 });
