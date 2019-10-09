@@ -1,0 +1,139 @@
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: #f7f2f2;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.navbar-content {
+  margin: 0;
+  padding: 0 30px;
+  position: fixed;
+  overflow: hidden;
+  background-color: rgb(247, 242, 242, 0.9);
+  top: 0;
+  width: 100vw;
+  font-size: 18px;
+  -webkit-box-shadow: 0px 30px 5px 2px rgba(247, 242, 242, 0.79);
+  -moz-box-shadow: 0px 30px 5px 2px rgba(247, 242, 242, 0.79);
+  box-shadow: 0px 30px 10px 2px rgba(247, 242, 242, 0.7);
+}
+
+.navbar-content div {
+  padding-right: 30px;
+}
+
+.navbar-content div a{
+  color: #888888;
+}
+
+.navbar-content div a:hover{
+  color: #fb6933;
+}
+
+.img-face {
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 50px;
+}
+
+.graffiti {
+  position: absolute;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.graffiti img {
+  transform: rotate(-30deg) scale(1.25);
+  left: -300px;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  -webkit-box-shadow: 2px 2px 12px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 2px 12px 0px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 12px 0px rgba(0,0,0,0.75);
+}
+
+.intro-content {
+  height: 100vh;
+}
+
+.intro-content div {
+  text-align: left;
+  margin-right: 200px;
+  width: 450px;
+}
+
+.intro-content div:last-child {
+  font-weight: 900;
+}
+
+.intro-content div:last-child {
+  font-size: 16px;
+  padding: 0;
+  margin-top: 50px;
+}
+
+.portfolio-content {
+  height: 100vh;
+}
+
+@media screen and (max-width: 1200px) {
+  .graffiti img {
+    left: -450px;
+  }
+
+  .intro-content div {
+    margin-right: 50px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .graffiti img {
+    transform: rotate(-25deg) scale(1.1);
+    left: -400px;
+  }
+
+  .intro-content div {
+    margin-right: 20px;
+    width: 400px;
+  }
+
+  .intro-content div:first-child h1 {
+    font-size: 32px;
+  }
+
+  .intro-content div:last-child {
+    margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .graffiti img {
+    /* width: 770px; */
+    transform: rotate(-75deg) scale(1.2);
+    top: 400px;
+    left: -150px;
+  }
+  .intro-content {
+    padding-top: 150px;
+  }
+  .intro-content div:last-child {
+    margin: 30px 0;
+  }
+  .intro-content div {
+    text-align: center;
+    width: 100vw;
+    padding-right: 150px;
+  }
+}
+
+/* @media screen and (max-width: 800px) and (min-width: 640px) {
+  .graffiti img {
+    width: 770px;
+    transform: rotate(-75deg) scale(1.2);
+    top: 400px;
+    left: -150px; 
+  }
+} */
