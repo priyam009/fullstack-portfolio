@@ -3,7 +3,4 @@ module.exports = function(app) {
     res.render("index");
   });
 
-  app.get("*", function(req, res) {
-    res.render("404");
-  });
 };
