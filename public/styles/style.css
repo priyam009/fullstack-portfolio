@@ -129,11 +129,12 @@ body {
   }
 }
 
-.portfolio-content {
+.hashtag-content {
   height: 100vh;
+  padding-top: 80px
 }
 
-.portfolio-tags {
+.hashtag {
   background-color: #f2f2f2;
   padding: 10px 10px;
   margin: 5px 20px;
@@ -146,10 +147,10 @@ body {
   box-shadow: 2px 2px 12px 0px rgba(0,0,0,0.2);
 }
 
-.portfolio-tags:hover {
+.hashtag:hover {
   background-color: lightgray;
 }
 
-.portfolio-tags div svg {
+.hashtag div svg {
   margin-right: 10px;
 }
