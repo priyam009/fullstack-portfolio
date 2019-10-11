@@ -159,3 +159,11 @@ button:focus {
 .hashtag div svg {
   margin-right: 10px;
 }
+
+[data-status="active"] {
+  background-color: #fc7d11;
+}
+
+[data-status="inactive"] {
+  background-color: #f2f2f2;
+}
