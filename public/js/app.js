@@ -30,8 +30,18 @@ $(document).ready(function() {
       selectedTag.splice(index, 1);
       console.log("selectedTag", selectedTag);
     }
+
+    //Convert to string to send as URL query
+    var tags = selectedTag.join(",").toString();
+    console.log("Tags string", tags);
+
+    //GET request
+    $.ajax("/find/" + selectedTag, {
+      method: "GET",
+      data: tags
+    }).then(function(result) {
+      console.log("result received", result);
+    });
   });
-
-
 
 });
