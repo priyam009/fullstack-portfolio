@@ -2,22 +2,28 @@ var db = require("../models");
 var Op = db.Sequelize.Op;
 
 module.exports = function(app) {
+  //GET index page
   app.get("/", function(req, res) {
     res.render("index");
   });
 
+  //GET all projects
   app.get("/projects", function(req, res) {
     db.Projects.findAll().then(function(result) {
       res.json(result);
     });
   });
 
-  app.get("/find", function(req, res) {
+  //GET projects that match tags
+  app.get("/find/:tags", function(req, res) {
+    console.log("req params", req.params.tags);
+    var hashTags = req.params.tags;
     var data = {
-      hashTags: req.body
+      hashTags: hashTags.split(",")
     };
     console.log("hashtags", data.hashTags);
 
+    //Create query to check each tag with the hasTags column
     function substring() {
       var query = [];
       for (var i = 0; i < data.hashTags.length; i++) {
@@ -28,18 +34,15 @@ module.exports = function(app) {
       return query;
     }
 
+    //Find all that match the query
     db.Projects.findAll({
       where: {
         hashTags: {
           [Op.and]: substring()
-          // [
-          //     { [Op.substring]: data.hashTags[0] },
-          //     { [Op.substring]: data.hashTags[1] },
-          //     { [Op.substring]: data.hashTags[2] }
-          // ]
         }
       }
     }).then(function(result) {
+      //Return json response
       res.json(result);
     });
   });
