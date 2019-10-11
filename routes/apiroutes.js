@@ -33,9 +33,9 @@ module.exports = function(app) {
         hashTags: {
           [Op.and]: substring()
           // [
-            //     { [Op.substring]: data.hashTags[0] },
-            //     { [Op.substring]: data.hashTags[1] },
-            //     { [Op.substring]: data.hashTags[2] }
+          //     { [Op.substring]: data.hashTags[0] },
+          //     { [Op.substring]: data.hashTags[1] },
+          //     { [Op.substring]: data.hashTags[2] }
           // ]
         }
       }
