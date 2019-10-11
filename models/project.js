@@ -6,20 +6,30 @@ module.exports = function(sequelize, Datatypes) {
         type: Datatypes.STRING,
         allowNull: false
       },
-      github: {
-        type: Datatypes.STRING,
-        allowNull: false.STRING,
-        validate: {
-          isUrl: true
-        }
+      description: {
+        type: Datatypes.STRING(1234),
+        allowNull: false
       },
-      url: {
+      image: {
         type: Datatypes.STRING,
         allowNull: false
+      },
+      github: {
+        type: Datatypes.STRING,
+        allowNull: false
+      },
+      website: {
+        type: Datatypes.STRING
+      },
+      gif: {
+        type: Datatypes.STRING
       },
       hashTags: {
         type: Datatypes.STRING,
-        allowNull: false
+        allowNull: false,
+        get: function() {
+          return this.getDataValue("hashTags").split(",");
+        }
       }
     },
     {
