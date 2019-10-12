@@ -139,6 +139,10 @@ button:focus {
   padding-top: 80px;
 }
 
+.hashtag-row {
+  padding: 5px;
+}
+
 .hashtag {
   background-color: #f2f2f2;
   padding: 10px 10px;
@@ -166,4 +170,79 @@ button:focus {
 
 [data-status="inactive"] {
   background-color: #f2f2f2;
+}
+
+.carousel {
+  padding-top: 50px;
+}
+
+.carousel-inner {
+  -webkit-box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.9);
+  border-radius: 30px;
+  width: 50vw;
+  /* height: 100vh */
+  height: 550px;
+}
+
+.fas {
+  font-size: 75px;
+}
+
+.page-one {
+  text-align: center;
+  font-size: 30px;
+  background-color: #121212;
+  color: #fff;
+  font-weight: 500;
+  min-height: 100%;
+}
+
+.page-one img {
+  border-radius: 30px 30px 0 0;
+}
+
+.page-two {
+  font-size: 40px;
+  /* background-color: #fff; */
+  background-color: #22126f;
+  color: #fff;
+  /* color: #121212; */
+  font-weight: 500;
+  /* height: 5vh; */
+  text-align: center;
+  height: 100%;
+}
+
+.page-two div:first-child{
+  font-size: 18px;
+  text-align: center;
+}
+
+.page-two-content {
+  height: 100%;
+  margin: 0 75px
+}
+
+.page-two-tags {
+  width: 100%;
+  font-size: 25px;
+}
+
+.page-two-tags a {
+  border: 1px solid #fff;
+  padding: 0 5px;
+  margin: 10px 30px;
+  border-radius: 25px;
+  -webkit-box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.9);
+  -moz-box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.9);
+  box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.9);
+  background-color: lightgray;
+  color: #121212
+}
+
+.page-three {
+  height: 100%;
+  background-color: #1cea8b
 }
