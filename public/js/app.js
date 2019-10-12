@@ -1,6 +1,10 @@
-$(document).ready(function() {
+//Function to stop carousel slide change
+function stopCarousel() {
+  $(".carousel").carousel({ interval: false });
+}
 
-  //Jump to section- Home/Portfolio/Contact
+//Function to Jump to section- Home/Portfolio/Contact
+function jumpSection() {
   $(".page-lnk").click(function() {
     var anchor = $(this).attr("dest");
 
