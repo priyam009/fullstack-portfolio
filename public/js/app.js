@@ -105,7 +105,7 @@ function buildCarousel() {
 
   var pageTwoContent = $(
     "<div " +
-      "class='d-flex flex-column align-items-center justify-content-around page-two-content'>"
+      "class='d-flex flex-column justify-content-between page-two-content'>"
   ).append(pageTwoText, pageTwoTags);
 
   var pageTwo = $(
@@ -116,12 +116,13 @@ function buildCarousel() {
   var pageOneImg =
     "<img " +
     "src='./images/eatsht.jpg' " +
-    "class='d-block w-100' " +
+    "class='d-block img-fluid' " +
     "alt='Eat Sh*t'>";
+  var pageOneTitle = "<div " + "class='page-one-div'>" + "Eat Sh*t" + "</div>";
   var pageOne = $(
     "<div " +
-      "class='carousel-item active page-one d-flex flex-column justify-content-between'>"
-  ).append(pageOneImg, "Eat Sh*t");
+      "class='carousel-item active page-one'>"
+  ).append(pageOneImg, pageOneTitle);
 
   //Carousel Inner
   var carouselInner = $("<div class='carousel-inner'>").append(
