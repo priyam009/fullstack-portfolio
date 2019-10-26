@@ -16,6 +16,7 @@ body {
   top: 0;
   width: 100vw;
   font-size: 18px;
+  z-index: 2;
   -webkit-box-shadow: 0px 30px 5px 2px rgba(247, 242, 242, 0.79);
   -moz-box-shadow: 0px 30px 5px 2px rgba(247, 242, 242, 0.79);
   box-shadow: 0px 30px 10px 2px rgba(247, 242, 242, 0.7);
@@ -43,7 +44,7 @@ body {
   position: absolute;
   overflow: hidden;
   width: 800px;
-  z-index: 1;
+  z-index: 3;
 }
 
 .graffiti img {
@@ -140,7 +141,10 @@ button:focus {
 }
 
 .hashtag-row {
-  padding: 5px;
+  padding-right: 50px;
+  padding-left: 50px;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .hashtag {
@@ -177,72 +181,91 @@ button:focus {
 }
 
 .carousel-inner {
+  /* min-height: 400px; */
   -webkit-box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.9);
   border-radius: 30px;
-  width: 50vw;
-  /* height: 100vh */
-  height: 550px;
+  max-width: 700px !important;
+  max-height: 450px !important;
+  /* width: 50vw; */
 }
 
 .fas {
   font-size: 75px;
 }
 
-.page-one {
+/* .page-one {
   text-align: center;
   font-size: 30px;
   background-color: #121212;
   color: #fff;
   font-weight: 500;
-  min-height: 100%;
+} */
+
+/* .page-one img {
+  border-radius: 30px 30px 0 0;
+} */
+
+.page-one {
+  position: relative;
 }
 
-.page-one img {
-  border-radius: 30px 30px 0 0;
+.page-one-div {
+  width: 100%;
+  text-align: center;
+  background-color: #1cea8b;
+  color: #121212;
+  font-size: 30px;
+  position: absolute;
+  bottom: 0px;
 }
 
 .page-two {
+  max-width: 700px !important;
+  height: 450px !important;
   font-size: 40px;
-  /* background-color: #fff; */
-  background-color: #22126f;
-  color: #fff;
-  /* color: #121212; */
+  background-color: #1cea8b;
+  color: #121212;
   font-weight: 500;
-  /* height: 5vh; */
   text-align: center;
-  height: 100%;
 }
 
 .page-two div:first-child{
   font-size: 18px;
   text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .page-two-content {
+  margin: 0 75px;
   height: 100%;
-  margin: 0 75px
 }
 
 .page-two-tags {
   width: 100%;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .page-two-tags a {
-  border: 1px solid #fff;
-  padding: 0 5px;
+  border: 1px solid #f2f2f2;
+  padding: 5px 20px;
   margin: 10px 30px;
   border-radius: 25px;
   -webkit-box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.9);
   -moz-box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.9);
   box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.9);
-  background-color: lightgray;
+  background-color: #f2f2f2;
   color: #121212
 }
 
+.page-two-tags a:hover {
+  background-color: lightgray;
+
+}
+
 .page-three {
-  height: 100%;
+  height: 450px !important;
   background-color: #1cea8b
 }
