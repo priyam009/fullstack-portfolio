@@ -41,6 +41,10 @@ function selectTags() {
     var tags = selectedTag.join(",").toString();
     console.log("Tags string", tags);
 
+    if(!tags) {
+      $("#portfolio-content").empty();
+    }
+
     //GET request
     $.ajax("/find/" + selectedTag, {
       method: "GET",
