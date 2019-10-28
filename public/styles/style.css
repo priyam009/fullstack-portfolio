@@ -85,8 +85,7 @@ button:focus {
 }
 
 .hashtag-row {
-  padding-right: 50px;
-  padding-left: 50px;
+  width: 85vw;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 }
