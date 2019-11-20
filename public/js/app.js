@@ -152,7 +152,43 @@ function buildCarousel(index, result) {
   $("#portfolio-content").append(carouselContent);
 }
 
+function submitForm() {
+  $("#submit-button").on("click", function() {
+    event.preventDefault();
+
+    var name = $("#name")
+      .val()
+      .trim();
+    var email = $("#email")
+      .val()
+      .trim();
+    var message = $("#msg")
+      .val()
+      .trim();
+
+    var data = {
+      name: name,
+      email: email,
+      message: message
+    };
+
+    $(".portfolio-form").trigger("reset");
+
+    //GET request
+    $.ajax("/entry", {
+      method: "POST",
+      data: data
+    }).then(function() {
+      console.log("Sent");
+    });
+
+    $("#after-submit").text("Thank you");
+
+  });
+}
+
 $(document).ready(function() {
   jumpSection();
   selectTags();
+  submitForm();
 });

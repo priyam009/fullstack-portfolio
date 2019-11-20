@@ -46,4 +46,11 @@ module.exports = function(app) {
       res.json(result);
     });
   });
+
+  app.post("/entry", function(req, res) {
+    db.Requests.create(req.body).then(function(result) {
+      res.json(result);
+    });
+
+  });
 };
