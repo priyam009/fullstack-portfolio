@@ -41,7 +41,7 @@ function selectTags() {
     var tags = selectedTag.join(",").toString();
     console.log("Tags string", tags);
 
-    if(!tags) {
+    if (!tags) {
       $("#portfolio-content").empty();
     }
 
@@ -52,22 +52,24 @@ function selectTags() {
     }).then(function(result) {
       console.log("result received", result);
       $("#portfolio-content").empty();
-      for(var i=0; i<result.length; i++) {
-        buildCarousel();
+      for (var i = 0; i < result.length; i++) {
+        buildCarousel(i, result[i]);
         stopCarousel();
       }
     });
   });
 }
 
-function buildCarousel() {
+function buildCarousel(index, result) {
   //Arrow with Left Slide
   var iLeft = "<i class='fas fa-chevron-left'></i>";
   var spanLeft = $("<span>").append(iLeft);
   var anchorLeft = $(
     "<a " +
       "class='carousel-control-prev' " +
-      "href='#carousel-content' " +
+      "href='#carousel-content-" +
+      index +
+      "' " +
       "role='button' " +
       "data-slide='prev'>"
   ).append(spanLeft);
@@ -78,7 +80,9 @@ function buildCarousel() {
   var anchorRight = $(
     "<a " +
       "class='carousel-control-next' " +
-      "href='#carousel-content' " +
+      "href='#carousel-content-" +
+      index +
+      "' " +
       "role='button' " +
       "data-slide='next'>"
   ).append(spanRight);
@@ -86,16 +90,16 @@ function buildCarousel() {
   //Page Three
   var pageThreeImg =
     "<img " +
-    "src='./gifs/eatshit.gif' " +
+    "src='./gifs/" + result.gif + ".gif' " +
     "class='d-block w-100 d-flex align-self-center' " +
-    "alt='Project Image'>";
+    "alt='" + result.project + "'>";
   var pageThree = $(
     "<div " + "class='carousel-item page-three d-flex'>"
   ).append(pageThreeImg);
 
   //Page Two
-  var pageTwoGit = "<a href='#'>" + "#github" + "</a>";
-  var pageTwoApp = "<a href='#'>" + "#app" + "</a>";
+  var pageTwoGit = "<a href='" + result.github + "' target='_blank'>" + "#github" + "</a>";
+  var pageTwoApp = "<a href='" + result.website + "' target='_blank'>" + "#app" + "</a>";
 
   var pageTwoTags = $(
     "<div " + "class='d-flex justify-content-center page-two-tags'>"
@@ -103,8 +107,7 @@ function buildCarousel() {
 
   var pageTwoText =
     "<div " +
-    "class='d-flex'>" +
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry." +
+    "class='d-flex'>" + result.description +
     "</div>";
 
   var pageTwoContent = $(
@@ -114,19 +117,19 @@ function buildCarousel() {
 
   var pageTwo = $(
     "<div " + "class='carousel-item d-flex flex-column page-two'>"
-  ).append("Eat Sh*t", pageTwoContent);
+  ).append(result.project, pageTwoContent);
 
   //Page One
   var pageOneImg =
     "<img " +
-    "src='./images/eatsht.jpg' " +
+    "src='./images/" + result.image + ".jpg' " +
     "class='d-block img-fluid' " +
-    "alt='Eat Sh*t'>";
-  var pageOneTitle = "<div " + "class='page-one-div'>" + "Eat Sh*t" + "</div>";
-  var pageOne = $(
-    "<div " +
-      "class='carousel-item active page-one'>"
-  ).append(pageOneImg, pageOneTitle);
+    "alt='" + result.project + "'>";
+  var pageOneTitle = "<div " + "class='page-one-div'>" + result.project + "</div>";
+  var pageOne = $("<div " + "class='carousel-item active page-one'>").append(
+    pageOneImg,
+    pageOneTitle
+  );
 
   //Carousel Inner
   var carouselInner = $("<div class='carousel-inner'>").append(
@@ -138,7 +141,9 @@ function buildCarousel() {
   //Carousel Content
   var carouselContent = $(
     "<div " +
-      "id='carousel-content' " +
+      "id='carousel-content-" +
+      index +
+      "' " +
       "class='carousel slide carousel-fade' " +
       "data-ride='carousel'>"
   ).append(carouselInner, anchorLeft, anchorRight);
