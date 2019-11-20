@@ -78,10 +78,10 @@ button:focus {
   outline: 0;
 }
 
-
 .hashtag-content {
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 80px;
+  margin-bottom: 75px;
 }
 
 .hashtag-row {
@@ -115,6 +115,10 @@ button:focus {
   background-color: #fc7d11;
 }
 
+[data-status="active"]:hover {
+  background-color: #fd9741;
+}
+
 [data-status="inactive"] {
   background-color: #f2f2f2;
 }
@@ -143,7 +147,7 @@ button:focus {
 .page-one-div {
   width: 100%;
   text-align: center;
-  background-color: #1cea8b;
+  background-color: #fd9741;
   color: #121212;
   font-size: 30px;
   position: absolute;
@@ -154,13 +158,13 @@ button:focus {
   max-width: 700px !important;
   height: 450px !important;
   font-size: 40px;
-  background-color: #1cea8b;
+  background-color: #fd9741;
   color: #121212;
   font-weight: 500;
   text-align: center;
 }
 
-.page-two div:first-child{
+.page-two div:first-child {
   font-size: 18px;
   text-align: center;
   padding-top: 15px;
@@ -181,22 +185,95 @@ button:focus {
   border: 1px solid #f2f2f2;
   padding: 5px 20px;
   margin: 10px 30px;
-  border-radius: 25px;
-  -webkit-box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.9);
-  -moz-box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.9);
-  box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.9);
+  border-radius: 20px;
+  -webkit-box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.5);
   background-color: #f2f2f2;
-  color: #121212
+  color: #121212;
 }
 
 .page-two-tags a:hover {
   background-color: lightgray;
-  
+  text-decoration: none;
 }
+
+/* .page-two-tags a:focus {
+} */
 
 .page-three {
   height: 450px !important;
-  background-color: #1cea8b
+  background-color: #fd9741;
+}
+
+.contact-head {
+  height: 100vh;
+  width: 100%;
+  padding-top: 80px;
+  position: relative;
+}
+
+.contact-content {
+  position: relative;
+  top: 120px;
+  max-width: 60vw;
+}
+
+.form-control {
+  border-color: #000;
+}
+
+.form-group label {
+  font-weight: 550;
+}
+
+.form-button {
+  background-color: #f2f2f2;
+  padding: 10px 10px;
+  /* margin: 5px 20px; */
+  display: block;
+  border-radius: 30px;
+  border: 0px;
+  -webkit-box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.2);
+  font-size: 20px;
+  color: #121212;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-button:hover {
+  background-color: lightgray;
+}
+
+.footer {
+  background-color: rgb(247, 242, 242, 0.9);
+  position: absolute;
+  bottom: 0px;
+  height: 120px;
+  width: 100%;
+  color: #121212;
+}
+
+.footer p {
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+}
+
+.fab,
+.fas {
+  padding: 5px;
+  font-size: 30px;
+  color: #121212;
+}
+
+.icons {
+  margin: 5px 5px;
+  padding: 5px 5px;
 }
 
 @media screen and (max-width: 1500px) {
@@ -249,7 +326,7 @@ button:focus {
   }
 }
 
-@media screen and (max-width: 767px) and (min-width:400px) {
+@media screen and (max-width: 767px) and (min-width: 400px) {
   .graffiti {
     position: absolute;
     overflow: hidden;
@@ -265,7 +342,7 @@ button:focus {
     -moz-box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.75);
     opacity: 0.2;
-    filter: alpha(opacity=20)
+    filter: alpha(opacity=20);
   }
 
   .intro-content div {
@@ -293,7 +370,7 @@ button:focus {
     overflow: hidden;
     z-index: 0;
   }
-  
+
   .graffiti img {
     transform: rotate(-30deg) scale(1.3);
     left: -350px;
@@ -304,7 +381,7 @@ button:focus {
     -moz-box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.75);
     opacity: 0.2;
-    filter: alpha(opacity=20)
+    filter: alpha(opacity=20);
   }
 
   .intro-content div {
