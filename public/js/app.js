@@ -47,35 +47,40 @@ function selectTags() {
       $(this).attr("data-status", "active");
       var tag = $(this).attr("id");
       selectedTag.push(tag);
-      console.log("selectedTag", selectedTag);
+      // console.log("selectedTag", selectedTag);
     } else {
       $(this).attr("data-status", "inactive");
       var tag = $(this).attr("id");
       var index = selectedTag.indexOf(tag);
       selectedTag.splice(index, 1);
-      console.log("selectedTag", selectedTag);
+      // console.log("selectedTag", selectedTag);
     }
-
-    //Convert to string to send as URL query
-    var tags = selectedTag.join(",").toString();
-    console.log("Tags string", tags);
 
     if (!tags) {
       $("#portfolio-content").empty();
     }
 
-    //GET request
-    $.ajax("/find/" + selectedTag, {
-      method: "GET",
-      data: tags
-    }).then(function(result) {
-      console.log("result received", result);
-      $("#portfolio-content").empty();
-      for (var i = 0; i < result.length; i++) {
-        buildCarousel(i, result[i]);
-        stopCarousel();
-      }
-    });
+    var tags = arrayToString(selectedTag);
+
+    getProjects(selectedTag, tags);
+  });
+
+  getProjects(selectedTag, tags);
+}
+
+//Get all the projects related to the seletected tags
+function getProjects(selectedTag, tags) {
+  // GET request
+  $.ajax("/find/" + selectedTag, {
+    method: "GET",
+    data: tags
+  }).then(function(result) {
+    // console.log("result received", result);
+    $("#portfolio-content").empty();
+    for (var i = 0; i < result.length; i++) {
+      buildCarousel(i, result[i]);
+      stopCarousel();
+    }
   });
 }
 
