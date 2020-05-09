@@ -17,10 +17,29 @@ function jumpSection() {
   });
 }
 
+function checkSelected() {
+  var activeTags = [];
+
+  $(".hashtag-row button").each(function(index, element) {
+    if ($(element).attr("data-status") === "active") {
+      activeTags.push($(element).attr("id"));
+    }
+  });
+
+  return activeTags;
+}
+
+function arrayToString(selectedTag) {
+  //Convert to string to send as URL query
+  var tags = selectedTag.join(",").toString();
+  return tags;
+}
+
 // Function to select tags
 function selectTags() {
   //Store selected #hashTags
-  var selectedTag = [];
+  var selectedTag = checkSelected();
+  var tags = arrayToString(selectedTag);
 
   //Change state and add to selectedTag array
   $("button").on("click", function() {
