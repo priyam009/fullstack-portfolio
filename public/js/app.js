@@ -114,25 +114,28 @@ function buildCarousel(index, result) {
   //Page Three
   var pageThreeImg =
     "<img " +
-    "src='./gifs/" + result.gif + ".gif' " +
+    "src='./gifs/" +
+    result.gif +
+    ".gif' " +
     "class='d-block w-100 d-flex align-self-center' " +
-    "alt='" + result.project + "'>";
+    "alt='" +
+    result.project +
+    "'>";
   var pageThree = $(
     "<div " + "class='carousel-item page-three d-flex'>"
   ).append(pageThreeImg);
 
   //Page Two
-  var pageTwoGit = "<a href='" + result.github + "' target='_blank'>" + "#github" + "</a>";
-  var pageTwoApp = "<a href='" + result.website + "' target='_blank'>" + "#app" + "</a>";
+  var pageTwoGit =
+    "<a href='" + result.github + "' target='_blank'>" + "#github" + "</a>";
+  var pageTwoApp =
+    "<a href='" + result.website + "' target='_blank'>" + "#app" + "</a>";
 
   var pageTwoTags = $(
     "<div " + "class='d-flex justify-content-center page-two-tags'>"
   ).append(pageTwoGit, pageTwoApp);
 
-  var pageTwoText =
-    "<div " +
-    "class='d-flex'>" + result.description +
-    "</div>";
+  var pageTwoText = "<div " + "class='d-flex'>" + result.description + "</div>";
 
   var pageTwoContent = $(
     "<div " +
@@ -146,10 +149,15 @@ function buildCarousel(index, result) {
   //Page One
   var pageOneImg =
     "<img " +
-    "src='./images/" + result.image + ".jpg' " +
+    "src='./images/" +
+    result.image +
+    ".jpg' " +
     "class='d-block img-fluid' " +
-    "alt='" + result.project + "'>";
-  var pageOneTitle = "<div " + "class='page-one-div'>" + result.project + "</div>";
+    "alt='" +
+    result.project +
+    "'>";
+  var pageOneTitle =
+    "<div " + "class='page-one-div'>" + result.project + "</div>";
   var pageOne = $("<div " + "class='carousel-item active page-one'>").append(
     pageOneImg,
     pageOneTitle
@@ -203,11 +211,10 @@ function submitForm() {
       method: "POST",
       data: data
     }).then(function() {
-      console.log("Sent");
+      // console.log("Sent");
     });
 
     $("#after-submit").text("Thank you");
-
   });
 }
 

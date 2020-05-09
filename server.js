@@ -3,9 +3,6 @@ require("dotenv").config();
 //Require Express
 var express = require("express");
 
-//Require Express Handlebars
-// var exphbs = require("express-handlebars");
-
 //Require database model
 var db = require("./models");
 
